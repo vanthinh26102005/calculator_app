@@ -18,8 +18,10 @@ function deleteChar() {
 // Calculate the result
 function calculateResult() {
   try {
-    display.value = eval(display.value);
+    if(display.value == '' || display.value == '.') display.value = 0;
+   
+    else  display.value = eval(display.value);
   } catch (error) {
-    display.value = 'Error';
+    display.value = 'Syntax Error';
   }
 }
